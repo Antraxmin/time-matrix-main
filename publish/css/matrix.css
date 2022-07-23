@@ -11,6 +11,7 @@ ul, ol {
     border-left: 3px solid var(--dark-gray);
     border-bottom: 3px solid var(--dark-gray);
     margin: 1rem 4rem 4rem;
+    position: relative;
 }
 
 .matrix-item {
@@ -59,4 +60,88 @@ ul, ol {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.done-text-container {
+    flex: 1;
+    font-size: 1.6rem;
+    display: flex;
+}
+
+.todo-done {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.todo-done:checked + .todo-text {
+    text-decoration: line-through;
+}
+
+.todo-text {
+    flex: 1;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.update-delete-container {
+    font-size: 1.6rem;
+}
+
+.todo-update {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.todo-delete {
+    cursor: pointer;
+}
+
+/* matrix box 순서 */
+
+#decide {
+    order: 1;
+}
+
+#do {
+    order: 2;
+}
+
+#delete {
+    order: 3;
+}
+
+#delegate {
+    order: 4;
+}
+
+.importance {
+    position: absolute;
+    font-size: 1.8rem;
+    top: 50%;
+    left: 0;
+    writing-mode: vertical-rl;
+}
+
+.urgency {
+    position: absolute;
+    font-size: 1.8rem;
+    bottom: 0;
+
+}
+
+/* 모바일 레이아웃 */
+
+@media only all and (max-width: 768px) {
+    .matrix-container {
+        display: block;
+    }
+    .matrix-item {
+        width: 90%;
+        margin: 0 auto 1rem;
+    }
+    .importance {
+        left: 5%;
+    }
 }
